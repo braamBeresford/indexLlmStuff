@@ -54,7 +54,7 @@ uv run python 0_reportgen.py
 
 ---
 
-## Example 2: Agentic Compile-Debug Loop (`2_moreagentic.py`)
+## Example 1: Agentic Compile-Debug Loop (`1_moreagentic.py`)
 
 This example builds on the workflow concepts from Example 0 and introduces **agentic tool use** — giving the LLM access to tools it can call autonomously to investigate and fix problems.
 
@@ -121,7 +121,7 @@ The compile → debug → recompile loop continues until the design passes or `m
 ### Run it
 
 ```bash
-uv run python 2_moreagentic.py
+uv run python 1_moreagentic.py
 ```
 
 ---
@@ -134,7 +134,7 @@ You can visualize the workflow graphs as interactive HTML files:
 uv run python draw_flows.py
 ```
 
-This produces `flow_0_reportgen.html` and `flow_2_moreagentic.html` — open them in a browser to see the step and event relationships.
+This produces `flow_0_reportgen.html` and `flow_1_moreagentic.html` — open them in a browser to see the step and event relationships.
 
 ## Using a real LLM
 
@@ -155,7 +155,6 @@ llm = OpenAI(model="gpt-4o", max_tokens=4096)
 | File | Purpose |
 |------|---------|
 | `0_reportgen.py` | Workflow basics — linear pipeline, LLM prompting |
-| `2_moreagentic.py` | Agentic workflows — tool use, branching, retry loops |
+| `1_moreagentic.py` | Agentic workflows — tool use, branching, retry loops |
 | `helper.py` | Mock LLMs, test design, and canned response data |
 | `draw_flows.py` | Generates interactive workflow diagrams |
-| `1_basic.py` | Reference — minimal compile-debug loop (requires real LLM + VCS) |
